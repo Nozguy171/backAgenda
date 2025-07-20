@@ -10,7 +10,7 @@ class Config:
         # Conexión fija a Supabase (solo para pruebas)
         SQLALCHEMY_DATABASE_URI = (
             "postgresql://postgres:Supergary2002"
-            "@db.bjyswhntsamaolnxlmzq.supabase.co:5432/postgres"
+            "@aws-0-us-east-2.pooler.supabase.com:5432/postgres"
             "?sslmode=require"
         )
 
