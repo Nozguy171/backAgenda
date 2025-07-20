@@ -11,6 +11,7 @@ class Config:
         SQLALCHEMY_DATABASE_URI = (
             "postgresql://postgres:Supergary2002"
             "@db.bjyswhntsamaolnxlmzq.supabase.co:5432/postgres"
+            "?sslmode=require"
         )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
