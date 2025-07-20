@@ -1,6 +1,6 @@
 # backend/agendaBack/routes/appointment.py
 from flask import Blueprint, request, jsonify
-from agendaBack.models import db, Appointment, Prospect, ProspectStatus, StatusHistory
+from models import db, Appointment, Prospect, ProspectStatus, StatusHistory
 from datetime import datetime
 from flask_jwt_extended import jwt_required, get_jwt_identity
 

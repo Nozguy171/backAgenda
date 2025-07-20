@@ -1,6 +1,6 @@
 # backend/agendaBack/routes/call.py
 from flask import Blueprint, jsonify, request
-from agendaBack.models import db, CallSchedule, Prospect
+from models import db, CallSchedule, Prospect
 from datetime import datetime
 
 call_bp = Blueprint('calls', __name__, url_prefix='/calls')

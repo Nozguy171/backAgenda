@@ -1,6 +1,6 @@
 # agendaBack/routes/history.py
 from flask import Blueprint, jsonify
-from agendaBack.models import Prospect, StatusHistory
+from models import Prospect, StatusHistory
 
 history_bp = Blueprint('history', __name__, url_prefix='/history')
 

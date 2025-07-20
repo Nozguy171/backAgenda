@@ -5,16 +5,16 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 
 # importa desde el paquete agendaback
-from agendaBack.models import db
-from agendaBack.routes.auth import auth_bp
-from agendaBack.routes.prospect import prospect_bp
-from agendaBack.routes.appointment import appointment_bp
-from agendaBack.routes.call import call_bp
-from agendaBack.routes.history import history_bp
+from models import db
+from routes.auth import auth_bp
+from routes.prospect import prospect_bp
+from routes.appointment import appointment_bp
+from routes.call import call_bp
+from routes.history import history_bp
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object('agendaBack.config.Config')
+    app.config.from_object('config.Config')
 
     CORS(app, resources={r"/*": {"origins": "*"}})
     JWTManager(app)
