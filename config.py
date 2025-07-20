@@ -1,18 +1,21 @@
-import os
-from datetime import timedelta  # ✂ añade esto
+# backend/agendaBack/config.py
+
+from datetime import timedelta
 
 class Config:
-    # Si estamos en desarrollo, conectamos como superuser
-    if os.getenv("FLASK_ENV") == "development":
+    # En desarrollo usamos la base local
+    if __import__('os').getenv("FLASK_ENV") == "development":
         SQLALCHEMY_DATABASE_URI = "postgresql://postgres:supergary1971@localhost:5432/ventas_db"
     else:
-        SQLALCHEMY_DATABASE_URI = os.getenv(
-            "DATABASE_URL",
-            "postgresql://ventas_app:ventas123@localhost:5432/ventas_db"
+        # Conexión fija a Supabase (solo para pruebas)
+        SQLALCHEMY_DATABASE_URI = (
+            "postgresql://postgres:Supergary2002"
+            "@db.bjyswhntsamaolnxlmzq.supabase.co:5432/postgres"
         )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "cambiaEstaClave")
+    # Clave JWT fija para pruebas
+    JWT_SECRET_KEY = "cambiaEstaClave"
 
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)
     JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=7)
