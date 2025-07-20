@@ -11,10 +11,10 @@ from .routes.prospect import prospect_bp
 from .routes.appointment import appointment_bp
 from .routes.call import call_bp
 from .routes.history import history_bp
-
+from .config import Config  
 def create_app():
     app = Flask(__name__)
-    app.config.from_object('.config.Config')
+    app.config.from_object(Config) 
 
     CORS(app, resources={r"/*": {"origins": "*"}})
     JWTManager(app)
